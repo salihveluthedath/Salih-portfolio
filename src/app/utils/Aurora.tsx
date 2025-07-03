@@ -131,7 +131,7 @@ export default function Aurora(props: AuroraProps) {
   const ctnDom = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctn = ctnDom.current as HTMLDivElement | null;
+    const ctn = ctnDom.current;
     if (!ctn) return;
 
     const renderer = new Renderer({
@@ -139,14 +139,11 @@ export default function Aurora(props: AuroraProps) {
       premultipliedAlpha: true,
       antialias: true,
     });
-    const gl = renderer.gl as WebGL2RenderingContext;
+    const gl = renderer.gl;  // Correct type automatically inferred
     gl.clearColor(0, 0, 0, 0);
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-
-    if (gl.canvas instanceof HTMLCanvasElement) {
-      gl.canvas.style.backgroundColor = "transparent";
-    }
+    gl.canvas.style.backgroundColor = "transparent";
 
     function resize() {
       if (!ctn) return;
