@@ -143,7 +143,10 @@ export default function Aurora(props: AuroraProps) {
     gl.clearColor(0, 0, 0, 0);
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-    gl.canvas.style.backgroundColor = "transparent";
+
+    if (gl.canvas instanceof HTMLCanvasElement) {
+      gl.canvas.style.backgroundColor = "transparent";
+    }
 
     function resize() {
       if (!ctn) return;
