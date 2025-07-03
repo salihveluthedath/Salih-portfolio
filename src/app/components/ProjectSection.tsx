@@ -124,7 +124,7 @@ export default function ProjectsSection() {
               <h2 className="text-5xl font-bold">My Portfolio & Projects</h2>
               <p className="text-lg text-gray-300">
                 I build modern, scalable, and user-friendly web applications tailored to meet client needs.
-                Below are some highlights of my recent work. Feel free to explore and reach out if you'd like to collaborate!
+                Below are some highlights of my recent work. Feel free to explore and reach out if you&rsquo;d like to collaborate!
               </p>
               <StarBorder
                 as="button"
