@@ -1,14 +1,15 @@
 import React from "react";
 
-type StarBorderProps<T extends React.ElementType> =
-  React.ComponentPropsWithoutRef<T> & {
-    as?: T;
-    className?: string;
-    children?: React.ReactNode;
-    color?: string;
-    speed?: React.CSSProperties['animationDuration'];
-    thickness?: number;
-  }
+type StarBorderProps<T extends React.ElementType> = {
+  as?: T;
+  className?: string;
+  children?: React.ReactNode;
+  color?: string;
+  speed?: React.CSSProperties["animationDuration"];
+  thickness?: number;
+} & Omit<React.ComponentPropsWithoutRef<T>, "as" | "className" | "children" | "color" | "speed" | "thickness" | "style"> & {
+  style?: React.CSSProperties;
+};
 
 const StarBorder = <T extends React.ElementType = "button">({
   as,
@@ -17,18 +18,19 @@ const StarBorder = <T extends React.ElementType = "button">({
   speed = "6s",
   thickness = 1,
   children,
+  style,
   ...rest
 }: StarBorderProps<T>) => {
   const Component = as || "button";
 
   return (
-    <Component 
-      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`} 
-      {...(rest as any)}
+    <Component
+      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`}
       style={{
         padding: `${thickness}px 0`,
-        ...(rest as any).style,
+        ...style,
       }}
+      {...rest}
     >
       <div
         className="absolute w-[300%] h-[50%] opacity-70 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"
@@ -52,25 +54,3 @@ const StarBorder = <T extends React.ElementType = "button">({
 };
 
 export default StarBorder;
-
-// tailwind.config.js
-// module.exports = {
-//   theme: {
-//     extend: {
-//       animation: {
-//         'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
-//         'star-movement-top': 'star-movement-top linear infinite alternate',
-//       },
-//       keyframes: {
-//         'star-movement-bottom': {
-//           '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
-//           '100%': { transform: 'translate(-100%, 0%)', opacity: '0' },
-//         },
-//         'star-movement-top': {
-//           '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
-//           '100%': { transform: 'translate(100%, 0%)', opacity: '0' },
-//         },
-//       },
-//     },
-//   }
-// }
