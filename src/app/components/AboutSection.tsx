@@ -32,7 +32,7 @@ export default function AboutSection() {
         {/* Left */}
         <div className="flex-1">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white font-space">
-            Hi, I'm Salih WebDeveloper
+            Hi, I&apos;m Salih WebDeveloper
           </h2>
           <p className="max-w-xl text-gray-400">
             Front End Developer / JavaScript Fan / Mern Stack Developer

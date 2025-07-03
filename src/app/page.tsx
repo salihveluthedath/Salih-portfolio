@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -13,9 +13,6 @@ import ProjectsSection from "./components/ProjectSection";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function Home() {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const projects = ["Intro", "Project 1", "Project 2", "Project 3"];
-
   const slidesContainerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -54,11 +51,6 @@ export default function Home() {
           scrub: 0.6,
           anticipatePin: 1,
           snap: 1 / (totalSlides - 1),
-          onUpdate: (self) => {
-            const progress = self.progress;
-            const slideIndex = Math.min(Math.round(progress * (totalSlides - 1)), totalSlides - 1);
-            setActiveSlide(slideIndex);
-          },
         },
       });
 
@@ -73,22 +65,6 @@ export default function Home() {
     };
   }, []);
 
-  const goToSlide = (index: number) => {
-    const scrollTrigger = ScrollTrigger.getById("projects-scroll");
-
-    if (scrollTrigger) {
-      const totalSlides = gsap.utils.toArray<HTMLElement>(".project-slide").length;
-      const totalScroll = scrollTrigger.end - scrollTrigger.start;
-      const targetScroll = scrollTrigger.start + (totalScroll * index) / (totalSlides - 1);
-
-      gsap.to(window, {
-        scrollTo: targetScroll,
-        duration: 1,
-        ease: "power2.out",
-      });
-    }
-  };
-
   return (
     <main className="main-container font-inter bg-black">
       <section className="section h-screen flex justify-center items-center">
@@ -97,12 +73,10 @@ export default function Home() {
       <section className="section h-screen flex justify-center items-center">
         <AboutSection />
       </section>
-
       <section className="section h-screen flex justify-center items-center">
         <SkillsSection />
       </section>
-
-<ProjectsSection/>
+      <ProjectsSection />
       <section className="section h-screen flex justify-center items-center">
         <ContactSection />
       </section>

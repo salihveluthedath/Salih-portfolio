@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import AnimatedContent from "../utils/AnimatedContent";
 import StarBorder from "../utils/StarBorder";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -23,21 +24,21 @@ export default function ProjectsSection() {
     },
     {
       title: "Doctor-Patient Frontend",
-  description: "A responsive frontend for a healthcare appointment platform where patients can browse doctors and book appointments.",
-  techStack: " Frontend , React, Bootstrap, Redux, authentication",
-  link: "https://my-health-com-project.vercel.app/",  // Add your deployed frontend project link here (e.g., Netlify link)
-  backgroundImage: "/assets/doctor.png", // Add the correct screenshot path
+      description: "A responsive frontend for a healthcare appointment platform where patients can browse doctors and book appointments.",
+      techStack: "Frontend, React, Bootstrap, Redux, authentication",
+      link: "https://my-health-com-project.vercel.app/",
+      backgroundImage: "/assets/doctor.png",
     },
-   {
-  title: "Vezto Realty - 360° Virtual Tour",
-  description: "A modern static website for Vezto Realty, showcasing their 360° virtual tour services for real estate and businesses.",
-  techStack: "React , bootstrap",
-  link: "https://vezto-reality.vercel.app/",  // Replace with your deployed project link
-  backgroundImage: "/assets/vezto.png", // Replace with your project screenshot path
-}
+    {
+      title: "Vezto Realty - 360° Virtual Tour",
+      description: "A modern static website for Vezto Realty, showcasing their 360° virtual tour services for real estate and businesses.",
+      techStack: "React, Bootstrap",
+      link: "https://vezto-reality.vercel.app/",
+      backgroundImage: "/assets/vezto.png",
+    },
   ];
 
-  const totalSlides = projects.length + 1; // Including intro slide
+  const totalSlides = projects.length + 1;
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -102,43 +103,41 @@ export default function ProjectsSection() {
         style={{ width: `${totalSlides * 100}vw` }}
       >
         {/* Intro Slide */}
-       {/* Intro Slide */}
-<div
-  className="slide w-screen h-screen flex flex-col justify-center items-center bg-cover bg-center relative text-white px-6 text-center"
-  style={{ backgroundImage: "url('/your-intro-image.jpg')" }}
->
-  <div className="bg-black bg-opacity-60 absolute inset-0"></div>
-      <AnimatedContent
-  distance={260}
-  direction="vertical"
-  reverse={false}
-  duration={3}
-  ease="power3.out"
-  initialOpacity={0.2}
-  animateOpacity
-  scale={1.1}
-  threshold={0.2}
-  delay={0.3}
->  <div className="relative z-10 max-w-2xl space-y-6">
-    <h2 className="text-5xl font-bold">My Portfolio & Projects</h2>
-    <p className="text-lg text-gray-300">
-      I build modern, scalable, and user-friendly web applications tailored to meet client needs.
-      Below are some highlights of my recent work. Feel free to explore and reach out if you'd like
-      to collaborate!
-    </p>
-<StarBorder
-  as="button"
-  className="custom-class"
-  color="cyan"
-  speed="5s"
-  onClick={() => goToSlide(1)}
->
- See Projects 
-</StarBorder>
-   
-  </div></AnimatedContent>
-</div>
-
+        <div
+          className="slide w-screen h-screen flex flex-col justify-center items-center bg-cover bg-center relative text-white px-6 text-center"
+          style={{ backgroundImage: "url('/your-intro-image.jpg')" }}
+        >
+          <div className="bg-black bg-opacity-60 absolute inset-0"></div>
+          <AnimatedContent
+            distance={260}
+            direction="vertical"
+            reverse={false}
+            duration={3}
+            ease="power3.out"
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+            delay={0.3}
+          >
+            <div className="relative z-10 max-w-2xl space-y-6">
+              <h2 className="text-5xl font-bold">My Portfolio & Projects</h2>
+              <p className="text-lg text-gray-300">
+                I build modern, scalable, and user-friendly web applications tailored to meet client needs.
+                Below are some highlights of my recent work. Feel free to explore and reach out if you'd like to collaborate!
+              </p>
+              <StarBorder
+                as="button"
+                className="custom-class"
+                color="cyan"
+                speed="5s"
+                onClick={() => goToSlide(1)}
+              >
+                See Projects
+              </StarBorder>
+            </div>
+          </AnimatedContent>
+        </div>
 
         {/* Project Slides */}
         {projects.map((project, index) => (
@@ -163,53 +162,50 @@ export default function ProjectsSection() {
                 </a>
               </div>
 
-              {/* Right - Image */}
-<div className="flex-1 flex justify-center">
-  <div className="relative w-80 h-48 md:w-96 md:h-60">
-    
-    {/* Laptop Frame */}
-    <img
-      src="/assets/laptop-frame.png"
-      alt="Laptop Frame"
-      className="absolute inset-0 w-full h-full object-contain z-10 pointer-events-none"
-    />
+              {/* Right - Image with Laptop Frame */}
+              <div className="flex-1 flex justify-center">
+                <div className="relative w-80 h-48 md:w-96 md:h-60">
+                  
+                  {/* Laptop Frame with 'fill' prop */}
+                  <Image
+                    src="/assets/laptop-frame.png"
+                    alt="Laptop Frame"
+                    fill
+                    className="absolute inset-0 object-contain z-10 pointer-events-none"
+                  />
 
-    {/* Project Screenshot inside laptop screen, made smaller */}
-    <div
-      className="absolute z-0 overflow-hidden flex items-center justify-center"
-      style={{
-        top: '5%',
-        left: '11.5%',
-        width: '77%',
-        height: '70%',
-        borderRadius: '0.5rem',
-      }}
-    >
-      <img
-        src={project.backgroundImage}
-        alt={`${project.title} preview`}
-        className="w-[95%] h-[98%] object-contain" // Reduced size to 85%
-      />
-    </div>
-
-  </div>
-</div>
-
-
-
-
+                  {/* Project Screenshot inside laptop screen */}
+                  <div
+                    className="absolute z-0 overflow-hidden flex items-center justify-center"
+                    style={{
+                      top: "5%",
+                      left: "11.5%",
+                      width: "77%",
+                      height: "70%",
+                      borderRadius: "0.5rem",
+                    }}
+                  >
+                    <Image
+                      src={project.backgroundImage}
+                      alt={`${project.title} preview`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>
         ))}
       </div>
 
-      {/* Dots Navigation (Exclude Intro) */}
+      {/* Dots Navigation */}
       <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-4 z-20">
         {Array.from({ length: projects.length }).map((_, index) => (
           <button
             key={index}
-            onClick={() => goToSlide(index + 1)} // Offset by 1 to skip intro
+            onClick={() => goToSlide(index + 1)}
             className={`w-4 h-4 rounded-full ${
               activeSlide === index + 1 ? "bg-neutral-900" : "bg-gray-800"
             } hover:scale-110 transition-transform`}

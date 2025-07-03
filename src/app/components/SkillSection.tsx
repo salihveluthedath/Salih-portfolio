@@ -45,7 +45,7 @@ export default function SkillsSection() {
       </h2>
 
       <p className="max-w-xl text-gray-400 mb-6 italic">
-        "The bigger the challenge, the greater the opportunity to grow."
+        &quot;The bigger the challenge, the greater the opportunity to grow.&quot;
       </p>
 
       <p className="max-w-2xl text-gray-400 mb-10">

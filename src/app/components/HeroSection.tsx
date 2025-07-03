@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import ProfileCard from "../utils/PostCard";
 
 export default function HeroSection() {
+  const scrollToContact = () => {
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
   return (
   <section className="h-screen flex flex-col justify-center items-center text-center px-4 snap-start relative">
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10 text-left">
@@ -47,7 +53,7 @@ Developer
             iconUrl="/assets/code.png"
             showUserInfo={true}
             enableTilt={true}
-            onContactClick={() => console.log('Contact clicked')}
+            onContactClick={scrollToContact}
           />
         </div>
       </section>
