@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
 
 const VERT = `#version 300 es
@@ -118,10 +118,13 @@ interface AuroraProps {
 
 export default function Aurora(props: AuroraProps) {
   const {
-    colorStops = ["#5227FF", "#7cff67", "#5227FF"],
+    colorStops: colorStopsProp = ["#5227FF", "#7cff67", "#5227FF"],
     amplitude = 1.0,
     blend = 0.5,
   } = props;
+
+  const colorStops = useMemo(() => colorStopsProp, [colorStopsProp]);
+
   const propsRef = useRef<AuroraProps>(props);
   propsRef.current = props;
 
