@@ -56,6 +56,8 @@
 /* Base Styles */
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
   font-family: 'Inter', 'General Sans', system-ui, -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif;
 }
 
@@ -63,6 +65,8 @@ body {
   min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
+  overflow-x: hidden;
+
 }
 
 /* Headings with Space Grotesk */
