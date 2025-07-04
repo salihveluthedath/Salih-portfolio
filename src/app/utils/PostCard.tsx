@@ -291,7 +291,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   src={miniAvatarUrl || avatarUrl}
   alt={`${name || "User"} mini avatar`}
   width={40}  // Adjust sizes accordingly
-  height={40}
+  height={90}
   onError={(e) => {
     const target = e.target as HTMLImageElement;
     target.style.opacity = "0.5";

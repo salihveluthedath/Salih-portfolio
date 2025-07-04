@@ -1,5 +1,7 @@
-/* Google Fonts: Inter for body, Space Grotesk for headings */
+/* Google Fonts: Inter, Space Grotesk, General Sans */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,700&display=swap');
+
 /* Tailwind imports */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
@@ -26,12 +28,12 @@
   to { opacity: 0; }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.5s forwards;
+.fade-in {
+  animation: fade-in 0.5s ease forwards;
 }
 
-.animate-fade-out {
-  animation: fade-out 0.3s forwards;
+.fade-out {
+  animation: fade-out 0.3s ease forwards;
 }
 
 /* Color and Font Variables */
@@ -54,9 +56,8 @@
 /* Base Styles */
 html {
   scroll-behavior: smooth;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'General Sans', system-ui, -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif;
 }
-
 
 body {
   min-height: 100vh;
@@ -66,9 +67,10 @@ body {
 
 /* Headings with Space Grotesk */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk', 'General Sans', sans-serif;
 }
 
+/* Font Utilities */
 .font-inter {
   font-family: 'Inter', sans-serif;
 }
@@ -76,10 +78,24 @@ h1, h2, h3, h4, h5, h6 {
 .font-space {
   font-family: 'Space Grotesk', sans-serif;
 }
+
+.font-general {
+  font-family: 'General Sans', sans-serif;
+}
+
+/* Scrollbar Styles */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 10px;
 }

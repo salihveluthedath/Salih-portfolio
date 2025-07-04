@@ -17,21 +17,24 @@ export default function ProjectsSection() {
   const projects = [
     {
       title: "Social Media App",
-      description: "A full-stack social platform with posts, stories, chat, and notifications.",
+      description:
+        "A full-stack social platform with posts, stories, chat, and notifications.",
       techStack: "MERN Stack, Redux, Socket.io, Tailwind CSS",
       link: "https://social-media-frontend-5264.onrender.com/",
       backgroundImage: "/assets/loopgram.png",
     },
     {
       title: "Doctor-Patient Frontend",
-      description: "A responsive frontend for a healthcare appointment platform where patients can browse doctors and book appointments.",
+      description:
+        "A responsive frontend for a healthcare appointment platform where patients can browse doctors and book appointments.",
       techStack: "Frontend, React, Bootstrap, Redux, authentication",
       link: "https://my-health-com-project.vercel.app/",
       backgroundImage: "/assets/doctor.png",
     },
     {
       title: "Vezto Realty - 360° Virtual Tour",
-      description: "A modern static website for Vezto Realty, showcasing their 360° virtual tour services for real estate and businesses.",
+      description:
+        "A modern static website for Vezto Realty, showcasing their 360° virtual tour services for real estate and businesses.",
       techStack: "React, Bootstrap",
       link: "https://vezto-reality.vercel.app/",
       backgroundImage: "/assets/vezto.png",
@@ -81,7 +84,8 @@ export default function ProjectsSection() {
 
     if (scrollTrigger) {
       const totalScroll = scrollTrigger.end - scrollTrigger.start;
-      const targetScroll = scrollTrigger.start + (totalScroll * index) / (totalSlides - 1);
+      const targetScroll =
+        scrollTrigger.start + (totalScroll * index) / (totalSlides - 1);
 
       gsap.to(window, {
         scrollTo: targetScroll,
@@ -95,7 +99,7 @@ export default function ProjectsSection() {
     <section
       ref={sectionRef}
       id="projects"
-      className="relative w-full h-screen overflow-hidden bg-black"
+      className="section projects-carousel relative w-full h-screen overflow-hidden bg-black"
     >
       <div
         ref={scrollContainerRef}
@@ -105,9 +109,12 @@ export default function ProjectsSection() {
         {/* Intro Slide */}
         <div
           className="slide w-screen h-screen flex flex-col justify-center items-center bg-cover bg-center relative text-white px-6 text-center"
-          style={{ backgroundImage: "url('/your-intro-image.jpg')" }}
+          style={{
+            backgroundImage: "url('/assets/intro-bg.jpg')",
+            backgroundColor: "#111",
+          }}
         >
-          <div className="bg-black bg-opacity-60 absolute inset-0"></div>
+          <div className="bg-black  absolute inset-0"></div>
           <AnimatedContent
             distance={260}
             direction="vertical"
@@ -123,8 +130,10 @@ export default function ProjectsSection() {
             <div className="relative z-10 max-w-2xl space-y-6">
               <h2 className="text-5xl font-bold">My Portfolio & Projects</h2>
               <p className="text-lg text-gray-300">
-                I build modern, scalable, and user-friendly web applications tailored to meet client needs.
-                Below are some highlights of my recent work. Feel free to explore and reach out if you&rsquo;d like to collaborate!
+                I build modern, scalable, and user-friendly web applications
+                tailored to meet client needs. Below are some highlights of my
+                recent work. Feel free to explore and reach out if you&rsquo;d
+                like to collaborate!
               </p>
               <StarBorder
                 as="button"
@@ -146,9 +155,8 @@ export default function ProjectsSection() {
             className="slide w-screen h-screen flex items-center justify-center bg-black relative p-6"
           >
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-6xl h-3/4 space-y-8 md:space-y-0 md:space-x-8">
-              
               {/* Left - Text */}
-              <div className="flex-1 text-white text-center md:text-left">
+              <div className="flex-1 text-white text-center md:text-left project-text">
                 <h3 className="text-4xl font-bold mb-4">{project.title}</h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>
                 <p className="text-sm text-gray-400 mb-6">{project.techStack}</p>
@@ -156,7 +164,7 @@ export default function ProjectsSection() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-400 hover:underline text-lg"
+                  className="text-cyan-400 hover:underline text-lg"
                 >
                   View Project
                 </a>
@@ -164,9 +172,8 @@ export default function ProjectsSection() {
 
               {/* Right - Image with Laptop Frame */}
               <div className="flex-1 flex justify-center">
-                <div className="relative w-80 h-48 md:w-96 md:h-60">
-                  
-                  {/* Laptop Frame with 'fill' prop */}
+                <div className="relative w-80 aspect-[16/9] md:w-96">
+                  {/* Laptop Frame */}
                   <Image
                     src="/assets/laptop-frame.png"
                     alt="Laptop Frame"
@@ -178,7 +185,7 @@ export default function ProjectsSection() {
                   <div
                     className="absolute z-0 overflow-hidden flex items-center justify-center"
                     style={{
-                      top: "5%",
+                      top: "15%",
                       left: "11.5%",
                       width: "77%",
                       height: "70%",
@@ -194,7 +201,6 @@ export default function ProjectsSection() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         ))}
@@ -207,7 +213,7 @@ export default function ProjectsSection() {
             key={index}
             onClick={() => goToSlide(index + 1)}
             className={`w-4 h-4 rounded-full ${
-              activeSlide === index + 1 ? "bg-neutral-900" : "bg-gray-800"
+              activeSlide === index + 1 ? "bg-cyan-400" : "bg-gray-700"
             } hover:scale-110 transition-transform`}
           ></button>
         ))}

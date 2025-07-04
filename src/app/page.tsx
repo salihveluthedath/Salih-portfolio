@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -13,8 +13,6 @@ import ProjectsSection from "./components/ProjectSection";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function Home() {
-  const slidesContainerRef = useRef<HTMLDivElement>(null);
-
   useLayoutEffect(() => {
     const sections = gsap.utils.toArray<HTMLElement>(".section");
 
@@ -29,38 +27,10 @@ export default function Home() {
       }
     });
 
-const projectsContainer = document.querySelector(".projects-carousel") as HTMLElement | null;
-const projectSlides = gsap.utils.toArray<HTMLElement>(".project-slide");
-
-if (projectsContainer && projectSlides.length && slidesContainerRef.current) {
-  const totalSlides = projectSlides.length;
-
-  gsap.set(slidesContainerRef.current, {
-    width: `${totalSlides * window.innerWidth}px`,
-  });
-
-  const tween = gsap.to(projectSlides, {
-    xPercent: -100 * (totalSlides - 1),
-    ease: "none",
-    scrollTrigger: {
-      id: "projects-scroll",
-      trigger: projectsContainer,
-      start: "top top",
-      end: () => `+=${projectsContainer.offsetWidth}`,
-      pin: true,
-      scrub: 0.6,
-      anticipatePin: 1,
-      snap: 1 / (totalSlides - 1),
-    },
-  });
-
-  return () => {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    tween.kill();
-  };
-}
-
-}, []);
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
     <main className="main-container font-inter bg-black">
