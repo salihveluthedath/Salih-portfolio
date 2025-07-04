@@ -20,7 +20,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-4 text-white font-space leading-snug"
+            className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-4 text-white font-space leading-snug"
           >
             Full-Stack <br className="hidden sm:block" /> Developer
           </motion.h1>

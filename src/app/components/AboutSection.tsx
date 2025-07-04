@@ -29,8 +29,8 @@ export default function AboutSection() {
           
           {/* Left */}
           <div className="flex-1 flex flex-col items-center md:items-start">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white font-space leading-snug text-center md:text-left">
-              Hi, I&apos;m <span className="text-primary">Salih</span>, Web Developer
+            <h2 className="text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-4 text-white font-space leading-snug text-center md:text-left">
+              Hi, I&apos;m <span className="text-primary">Salih</span> <br /> Web Developer
             </h2>
             <p className="max-w-xl text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 text-center md:text-left">
               Front End Developer / JavaScript Enthusiast / MERN Stack Developer
