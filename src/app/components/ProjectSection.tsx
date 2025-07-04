@@ -114,7 +114,7 @@ export default function ProjectsSection() {
             backgroundColor: "#111",
           }}
         >
-          <div className="bg-black  absolute inset-0"></div>
+          <div className="bg-black absolute inset-0"></div>
           <AnimatedContent
             distance={260}
             direction="vertical"
@@ -128,8 +128,10 @@ export default function ProjectsSection() {
             delay={0.3}
           >
             <div className="relative z-10 max-w-2xl space-y-6">
-              <h2 className="text-5xl font-bold">My Portfolio & Projects</h2>
-              <p className="text-lg text-gray-300">
+              <h2 className="text-3xl sm:text-4xl font-bold">
+                My Portfolio & Projects
+              </h2>
+              <p className="text-sm sm:text-md text-gray-300">
                 I build modern, scalable, and user-friendly web applications
                 tailored to meet client needs. Below are some highlights of my
                 recent work. Feel free to explore and reach out if you&rsquo;d
@@ -154,12 +156,18 @@ export default function ProjectsSection() {
             key={index}
             className="slide w-screen h-screen flex items-center justify-center bg-black relative p-6"
           >
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-6xl h-3/4 space-y-8 md:space-y-0 md:space-x-8">
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-6xl h-auto md:h-3/4 space-y-8 md:space-y-0 md:space-x-8">
               {/* Left - Text */}
               <div className="flex-1 text-white text-center md:text-left project-text">
-                <h3 className="text-4xl font-bold mb-4">{project.title}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <p className="text-sm text-gray-400 mb-6">{project.techStack}</p>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+                  {project.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-300 mb-4">
+                  {project.description}
+                </p>
+                <p className="text-xs sm:text-sm text-gray-400 mb-6">
+                  {project.techStack}
+                </p>
                 <a
                   href={project.link}
                   target="_blank"
@@ -172,7 +180,7 @@ export default function ProjectsSection() {
 
               {/* Right - Image with Laptop Frame */}
               <div className="flex-1 flex justify-center">
-                <div className="relative w-80 aspect-[16/9] md:w-96">
+                <div className="relative w-64 aspect-[16/9] sm:w-80 md:w-96">
                   {/* Laptop Frame */}
                   <Image
                     src="/assets/laptop-frame.png"
