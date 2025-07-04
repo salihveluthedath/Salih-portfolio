@@ -12,7 +12,7 @@ export default function HeroSection() {
 
   return (
     <section className="h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-10 lg:px-16 snap-start relative">
-      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between lg:gap-56 gap-8 text-left lg:mb-36 sm:">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between lg:gap-56 gap-8 text-left lg:mb-36 ">
         
         {/* Left Side - Text */}
         <div className="flex-1">
