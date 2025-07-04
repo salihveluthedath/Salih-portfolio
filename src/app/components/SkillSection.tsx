@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import AnimatedContent from "../utils/AnimatedContent";
 
 export default function SkillsSection() {
@@ -32,13 +31,9 @@ export default function SkillsSection() {
       threshold={0.2}
       delay={0.3}
     >
-      <motion.section
+      <section
         id="skills"
         className="min-h-screen flex flex-col justify-center items-center text-center px-4 snap-start"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
       >
         <h2 className="text-[clamp(2rem,5vw,4rem)] font-bold mb-4 text-white font-space">
           Skills & Experience
@@ -74,7 +69,7 @@ export default function SkillsSection() {
             </div>
           ))}
         </div>
-      </motion.section>
+      </section>
     </AnimatedContent>
   );
 }
