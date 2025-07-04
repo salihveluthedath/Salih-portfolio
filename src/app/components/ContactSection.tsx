@@ -8,7 +8,7 @@ export default function ContactSection() {
   return (
     <AnimatedContent
       distance={260}
-      direction="horizontal"
+      direction="vertical"
       reverse={false}
       duration={3}
       ease="power3.out"
@@ -26,23 +26,23 @@ export default function ContactSection() {
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white font-space leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white font-space leading-tight animate-item">
           Let’s Work Together
         </h2>
 
-        <p className="max-w-xl text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-4">
+        <p className="max-w-xl text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-4 animate-item">
           What would you do if you had a software expert available at your fingertips?
         </p>
 
-        <p className="max-w-xl text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-4">
+        <p className="max-w-xl text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-4 animate-item">
           Want to start a new project? Or just say hey. You can also follow me on Instagram.
         </p>
 
-        <p className="text-sm sm:text-base md:text-lg text-gray-300 font-semibold mb-8">
+        <p className="text-sm sm:text-base md:text-lg text-gray-300 font-semibold mb-8 animate-item">
           salihveluthedath@gmail.com
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6 animate-item">
           <StarBorder as="button" className="custom-class" color="cyan" speed="5s">
             <a href="mailto:salihveluthedath@gmail.com" className="text-sm sm:text-base md:text-lg">
               Say Hello

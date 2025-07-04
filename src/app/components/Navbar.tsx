@@ -37,19 +37,19 @@ export default function Navbar() {
         transition={{ duration: 0.8 }}
         className={`fixed top-0 left-0 w-full z-50 flex justify-center px-6 py-4 transition backdrop-blur-md ${
           scrolled ? "bg-black/60" : "bg-transparent"
-        }`}
+        } animate-item`}
       >
         <div className="max-w-6xl w-full flex justify-between items-center text-sm text-gray-300 uppercase">
           
           {/* Centered Links for Desktop */}
-          <div className="hidden md:flex gap-8 mx-auto">
+          <div className="hidden md:flex gap-8 mx-auto animate-item">
             <Link href="#about" className="hover:text-white transition">About</Link>
             <Link href="#projects" className="hover:text-white transition">Projects</Link>
             <Link href="#contact" className="hover:text-white transition">Contact</Link>
           </div>
 
           {/* Hamburger for Mobile */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center animate-item">
             <button
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
@@ -68,19 +68,19 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 flex flex-col items-center justify-center z-50 w-full h-full overflow-hidden"
+            className="fixed inset-0 bg-black/80 flex flex-col items-center justify-center z-50 w-full h-full overflow-hidden animate-item"
           >
             <motion.button
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close menu"
-              className="absolute top-6 right-6 text-white hover:scale-110 transition"
+              className="absolute top-6 right-6 text-white hover:scale-110 transition animate-item"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
             >
               <HiX className="w-7 h-7" />
             </motion.button>
             <motion.div
-              className="flex flex-col gap-8 text-xl text-gray-300 uppercase"
+              className="flex flex-col gap-8 text-xl text-gray-300 uppercase animate-item"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
             >

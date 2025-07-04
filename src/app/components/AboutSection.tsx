@@ -29,10 +29,10 @@ export default function AboutSection() {
           
           {/* Left */}
           <div className="flex-1 flex flex-col items-center md:items-start">
-            <h2 className="text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-4 text-white font-space leading-snug text-center md:text-left">
+            <h2 className="text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-4 text-white font-space leading-snug text-center md:text-left animate-item">
               Hi, I&apos;m <span className="text-primary">Salih</span> <br /> Web Developer
             </h2>
-            <p className="max-w-xl text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 text-center md:text-left">
+            <p className="max-w-xl text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 text-center md:text-left animate-item">
               Front End Developer / JavaScript Enthusiast / MERN Stack Developer
             </p>
           </div>
@@ -40,13 +40,13 @@ export default function AboutSection() {
           {/* Right */}
           <div className="flex-1 flex justify-center md:justify-start">
             <div className="max-w-xl space-y-3 text-gray-400 text-center md:text-left">
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg animate-item">
                 Professionally connected with the web development industry. Problem solver, well-organised person, loyal employee with high attention to detail.
               </p>
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg animate-item">
                 Passionate about technology, continuous learning, and building useful things for the web.
               </p>
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg animate-item">
                 Interested in the entire frontend spectrum and working on ambitious projects with interesting people.
               </p>
             </div>

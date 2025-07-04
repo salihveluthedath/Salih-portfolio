@@ -35,7 +35,7 @@ export default function SkillsSection() {
         id="skills"
         className="min-h-screen flex flex-col justify-center items-center text-center px-4 snap-start"
       >
-        <h2 className="text-[clamp(2rem,5vw,4rem)] font-bold mb-4 text-white font-space">
+        <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold mb-4 text-white font-space">
           Skills & Experience
         </h2>
 
@@ -62,9 +62,12 @@ export default function SkillsSection() {
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="flex flex-col items-center hover:scale-110 transition-transform duration-300 text-gray-300 cursor-pointer"
+              className="flex flex-col items-center hover:scale-110 transition-transform duration-300 text-gray-300 cursor-pointer group"
+              aria-label={skill.name}
             >
-              <i className={`${skill.icon} text-3xl mb-1`}></i>
+              <i
+                className={`${skill.icon} text-3xl mb-1 group-hover:text-cyan-400 transition-colors duration-300`}
+              ></i>
               <span className="text-xs md:text-sm font-medium">{skill.name}</span>
             </div>
           ))}
