@@ -55,7 +55,7 @@ export default function HeroSection() {
           <ProfileCard
             name="Salih V"
             title="Full-Stack Developer"
-            handle="javicodes"
+            handle="salihcodes"
             status="Online"
             contactText="Contact Me"
             avatarUrl="/assets/Adobe Express - file.png"
