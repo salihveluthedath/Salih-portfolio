@@ -4,7 +4,7 @@ import ProfileCard from "../utils/PostCard";
 
 export default function HeroSection() {
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about");
+    const aboutSection = document.getElementById("contact");
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -57,7 +57,7 @@ export default function HeroSection() {
             title="Full-Stack Developer"
             handle="javicodes"
             status="Online"
-            contactText="About Me"
+            contactText="Contact Me"
             avatarUrl="/assets/Adobe Express - file.png"
             iconUrl="/assets/code.png"
             showUserInfo={true}
