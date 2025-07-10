@@ -39,6 +39,14 @@ export default function ProjectsSection() {
       link: "https://vezto-reality.vercel.app/",
       backgroundImage: "/assets/vezto.png",
     },
+    {
+  title: "ECommerce Demo frontend",
+  description:
+    "A responsive frontend Amazon-style eCommerce website that fetches products from public APIs. Includes product listings, detailed pages, cart functionality, and responsive design.",
+  techStack: "React, Bootstrap, Context API / Redux",
+  link: "https://ecommerce-demo-virid-eight.vercel.app/", 
+  backgroundImage: "/assets/ecommerce-demo.png",
+},
   ];
 
   const totalSlides = projects.length + 1;
