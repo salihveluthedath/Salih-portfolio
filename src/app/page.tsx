@@ -4,11 +4,13 @@ import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import SkillsSection from "./components/SkillSection";
-import ContactSection from "./components/ContactSection";
-import ProjectsSection from "./components/ProjectSection";
+import dynamic from "next/dynamic";
+
+const HeroSection = dynamic(() => import("./components/HeroSection"));
+const AboutSection = dynamic(() => import("./components/AboutSection"));
+const SkillsSection = dynamic(() => import("./components/SkillSection"));
+const ContactSection = dynamic(() => import("./components/ContactSection"));
+const ProjectsSection = dynamic(() => import("./components/ProjectSection"), { ssr: false });
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 

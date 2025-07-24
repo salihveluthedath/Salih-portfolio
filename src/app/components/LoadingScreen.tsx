@@ -20,7 +20,6 @@ export default function LoadingScreen() {
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-90 animate-fade-in">
       <div className="flex flex-col items-center">
-        {/* Simple Code Icon using SVG */}
         <svg
           className="w-16 h-16 text-accent animate-spin"
           viewBox="0 0 24 24"

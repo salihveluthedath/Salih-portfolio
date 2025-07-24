@@ -18,7 +18,6 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    // Prevent background scroll when menu is open
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -41,14 +40,13 @@ export default function Navbar() {
       >
         <div className="max-w-6xl w-full flex justify-between items-center text-sm text-gray-300 uppercase">
           
-          {/* Centered Links for Desktop */}
+  
           <div className="hidden md:flex gap-8 mx-auto animate-item">
             <Link href="#about" className="hover:text-white transition">About</Link>
             <Link href="#projects" className="hover:text-white transition">Projects</Link>
             <Link href="#contact" className="hover:text-white transition">Contact</Link>
           </div>
 
-          {/* Hamburger for Mobile */}
           <div className="md:hidden flex items-center animate-item">
             <button
               onClick={() => setIsMenuOpen(true)}
@@ -61,7 +59,6 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
