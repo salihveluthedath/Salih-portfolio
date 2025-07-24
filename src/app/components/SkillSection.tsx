@@ -1,6 +1,3 @@
-"use client";
-
-import AnimatedContent from "../utils/AnimatedContent";
 
 export default function SkillsSection() {
   const skills = [
